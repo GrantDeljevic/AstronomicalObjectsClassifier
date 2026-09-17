@@ -1,56 +1,36 @@
-# Astronomical Objects Classification with Convolutional Neural Networks and SDSS data
+# Astronomical Objects Classifier
 
-## Introduction
+An earlier iteration of an SDSS-based astronomical-object classification pipeline, focused on data acquisition, preprocessing, and convolutional neural-network experiments.
 
-This project aims to classify astronomical objects using data from the Sloan Digital Sky Survey (SDSS) and Convolutional Neural Networks (CNN). It leverages python and popular machine learning libraries to accurately classify galaxies, stars, and quasars based on their image and spectral data.
+For the expanded multi-model project—including photometric color-index experiments and stellar spectral classification—see [`AstronomicalObjectsClassifier_new`](https://github.com/GrantDeljevic/AstronomicalObjectsClassifier_new).
 
-## Features
+## What’s Included
 
-- Utilizes SDSS DR18 data.
-- Implements a CNN model for classification.
-- Provides a pipeline for data preprocessing, training, and evaluation.
+- Sloan Digital Sky Survey (SDSS) data retrieval
+- Image and catalog-data preprocessing
+- CNN model training and evaluation
+- Reusable project structure for datasets, models, notebooks, and logs
 
-## Project Prerequisites
+## Setup
 
-Before you begin, ensure you have met the following requirements:
+Python 3.11 is recommended.
 
-Python: This project uses Python version 3.11.8. Download Python
-TensorFlow: TensorFlow 2.x is required for model building and training. Ensure compatibility with Python 3.11.8.
+```bash
+git clone https://github.com/GrantDeljevic/AstronomicalObjectsClassifier.git
+cd AstronomicalObjectsClassifier
+python -m venv .venv
+```
 
-## Installation
+Activate the environment, then install dependencies:
 
-Clone the Project:
-
-- git clone git@github.com:Shagasresthaa/AstronomicalObjectsClassifier.git
-- cd AstronomicalObjectsClassifier
-
-(As per new Github security policies, you will need to either setup an SSH key and setup in your account or setup an access key [SSH setup is rather simple and wouldnt have any need to regenerate periodically like access key] in order to do any code movement.
-
-Heres a quick link to the tutorial to do so: https://www.youtube.com/watch?v=X40b9x9BFGo
-
-Set Up a Virtual Environment (Optional but recommended):
-
-(localEnv is the name i used, feel free to use any name but please make sure to add it in .gitignore as you dont want them in repo)
-
-- python -m venv localEnv
-- source localEnv/bin/activate # On Windows use `localEnv\Scripts\activate`
-
-## Install Required Libraries:
-
-Navigate to the root of the project and install the required packages using pip with following command:
-
+```bash
 pip install -r requirements.txt
+```
 
-# Dataset Fetch Scripts Guide
+For example, SDSS catalog data can be fetched from the project root with:
 
-## CSV Data fetch
+```bash
+python -m src.data_fetch.fetchCsvSearchTargetData
+```
 
-Navigate to the root of the project and run the following command which will fetch the latest data from SDSS API
-
-python3 -m src.data_fetch.fetchCsvSearchTargetData
-
-## Additional Tools
-
-- Jupyter Notebook: For exploratory data analysis and model prototyping.
-- Git: For version control.
-- SDSS Data Access: Familiarize yourself with any API requirements if you intend to download data programmatically.
+This repository contains research code and assumes the project's original data layout; paths or dataset configuration may need adjustment on a new machine.
